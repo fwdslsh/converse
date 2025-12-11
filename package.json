@@ -1,0 +1,50 @@
+{
+  "name": "@fwdslsh/converse",
+  "version": "0.0.1",
+  "description": "A lightweight MCP server providing voice capabilities (TTS/STT/conversation) using remote OpenAI-compatible APIs.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "converse": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "start:bun": "bun run dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "voice",
+    "tts",
+    "text-to-speech",
+    "stt",
+    "speech-to-text",
+    "ai",
+    "openai",
+    "conversation"
+  ],
+  "author": "fwdslsh",
+  "license": "CC-BY-4.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fwdslsh/dispatch.git",
+    "directory": ".claude/skills/voice-mcp"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.7.0",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
