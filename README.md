@@ -40,15 +40,15 @@ For Claude Code, add to your `.mcp.json`:
   "mcpServers": {
     "converse": {
       "command": "converse",
-      // Optionally set configuration here instead of ENV
-      //"env": {
+      "env": {
+      //  //Optionally set configuration here instead of ENV
       //  "STT_API_URL": "https://your-api.example.com/v1/audio/transcriptions",
       //  "STT_API_KEY": "your-stt-api-key",
       //  "TTS_API_URL": "https://your-api.example.com/v1/audio/speech",
       //  "TTS_API_KEY": "your-tts-api-key",
       //  "TTS_VOICE": "alloy",
       //  "TTS_MODEL": "tts-1"
-      //}
+      }
     }
   }
 }
