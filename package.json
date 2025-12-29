@@ -25,7 +25,7 @@
     "clean": "rm -f converse converse-* *.exe dist/*",
     "start": "node dist/index.js",
     "start:bun": "bun run dist/index.js",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "bun run build"
   },
   "keywords": [
     "mcp",
