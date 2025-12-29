@@ -1,6 +1,6 @@
 {
   "name": "@fwdslsh/converse",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A lightweight MCP server providing voice capabilities (TTS/STT/conversation) using remote OpenAI-compatible APIs.",
   "type": "module",
   "main": "dist/index.js",
@@ -13,7 +13,14 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "bun build --target=node --outfile dist/converse.js src/index.ts && bun build --compile --target=bun-linux-x64 --outfile dist/linux/converse src/index.ts && bun build --compile --target=bun-darwin-x64 --outfile dist/darwin-x64/converse src/index.ts",
+    "build": "bun build src/index.ts --compile --outfile=converse",
+    "build:all": "npm run build:darwin-arm64 && npm run build:linux-arm64 && npm run build:darwin-x64 && npm run build:linux-x64 && npm run build:windows-x64",
+    "build:darwin-arm64": "bun build src/index.ts --compile --target=bun-darwin-arm64 --outfile=converse-darwin-arm64",
+    "build:linux-arm64": "bun build src/index.ts --compile --target=bun-linux-arm64 --outfile=converse-linux-arm64",
+    "build:darwin-x64": "bun build src/index.ts --compile --target=bun-darwin-x64 --outfile=converse-darwin-x64",
+    "build:linux-x64": "bun build src/index.ts --compile --target=bun-linux-x64 --outfile=converse-linux-x64",
+    "build:windows-x64": "bun build src/index.ts --compile --target=bun-windows-x64 --outfile=converse-windows-x64.exe",
+    "clean": "rm -f converse converse-* *.exe dist/*",
     "start": "node dist/index.js",
     "start:bun": "bun run dist/index.js",
     "prepublishOnly": "npm run build"
@@ -34,8 +41,8 @@
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fwdslsh/dispatch.git",
-    "directory": ".claude/skills/voice-mcp"
+    "url": "https://github.com/fwdslsh/core.git",
+    "directory": "packages/converse"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.7.0",
@@ -46,5 +53,8 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
