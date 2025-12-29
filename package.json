@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "description": "A lightweight MCP server providing voice capabilities (TTS/STT/conversation) using remote OpenAI-compatible APIs.",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
   "bin": {
-    "converse": "dist/index.js"
+    "converse": "src/index.ts"
   },
   "files": [
-    "dist",
+    "src/",
+    "dist/",
     "README.md",
     "LICENSE"
   ],
